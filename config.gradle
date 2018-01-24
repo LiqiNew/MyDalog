@@ -1,0 +1,17 @@
+ext {
+    android = [
+            compileSdkVersion: 25,
+            buildToolsVersion: "25.0.1",
+
+            minSdkVersion    : 14,
+            targetSdkVersion : 22,
+    ]
+
+    dependencies = [
+            //baselogger远程依赖
+            log         : 'com.github.liqinew:baselogger:V.1.0.0',
+            //V7依赖
+            appcompat_v7:'com.android.support:appcompat-v7:25.2.0',
+
+    ]
+}
