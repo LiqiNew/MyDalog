@@ -1,4 +1,4 @@
-[![](https://jitpack.io/v/liqinew/widgetutils.svg)](https://jitpack.io/#liqinew/widgetutils)
+[![](https://jitpack.io/v/liqinew/mydalog.svg)](https://jitpack.io/#liqinew/mydalog)
 [![](https://img.shields.io/badge/%E4%BD%9C%E8%80%85-%E6%9D%8E%E5%A5%87-orange.svg)](https://github.com/LiqiNew)
 
 # MyDalog
@@ -22,7 +22,7 @@ allprojects {
 **2：依赖WidgetUtils**<br>
 
 ```gradle
-compile 'com.github.liqinew:widgetutils:V.1.0.0'
+compile 'com.github.liqinew:mydalog:V.1.0.0'
 ```
 
 # A P I
