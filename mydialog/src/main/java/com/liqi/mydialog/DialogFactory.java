@@ -1,6 +1,8 @@
 package com.liqi.mydialog;
 
 import android.content.Context;
+import android.support.annotation.LayoutRes;
+import android.support.annotation.StyleRes;
 
 /**
  * dialog生产工厂
@@ -24,8 +26,8 @@ public class DialogFactory {
 	 *            是否可以使用返回按键
 	 * @return DiyDialog对象
 	 */
-	public static DiyDialog getDiyDialog(Context context, int theme,
-			int layoutId, boolean mCanceledTouch, boolean mCancelable) {
+	public static DiyDialog getDiyDialog(Context context, @StyleRes int theme,
+										 @LayoutRes int layoutId, boolean mCanceledTouch, boolean mCancelable) {
 		DiyDialog.Builder dialogBuilder = new DiyDialog.Builder(context, theme,
 				layoutId);
 		dialogBuilder.setCanceledTouch(mCanceledTouch);
@@ -46,7 +48,7 @@ public class DialogFactory {
 	 *            是否可以使用返回按键
 	 * @return DiyDialog对象
 	 */
-	public static DiyDialog getDiyDialog(Context context, int layoutId,
+	public static DiyDialog getDiyDialog(Context context,@LayoutRes int layoutId,
 			boolean mCanceledTouch, boolean mCancelable) {
 		DiyDialog.Builder dialogBuilder = new DiyDialog.Builder(context,
 				layoutId);
