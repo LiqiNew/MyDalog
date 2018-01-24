@@ -2,8 +2,10 @@ package com.liqi.mydialog;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.support.annotation.IdRes;
 import android.support.v4.view.ViewPager;
 import android.util.SparseArray;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -59,8 +61,8 @@ public class DiyDialog extends Dialog implements
     /**
      * 设置dialog布局里面所有控件点击事件
      *
-     * @param mClickInterfac
-     * @return
+     * @param mClickInterfac 控件点击事件接口
+     * @return DiyDialog对象
      */
     public DiyDialog setDialogViewOnClickInterfac(
             DialogViewOnClickInterfac mClickInterfac) {
@@ -70,13 +72,13 @@ public class DiyDialog extends Dialog implements
     }
 
     /**
-     * 获取存储SparseArray集合里面中的控件
+     * 通过控件ID获取控件
      *
-     * @param widgetId
-     * @param <T>
-     * @return
+     * @param widgetId 控件ID
+     * @param <T>      基类view的泛型
+     * @return T
      */
-    public <T> T $(int widgetId) {
+    public <T extends View> T $(@IdRes int widgetId) {
 
         if (null != this.mParameter) {
             //把当前控件ID存储进SparseArray里面
@@ -95,7 +97,7 @@ public class DiyDialog extends Dialog implements
     /**
      * 获取存储控件的集合
      *
-     * @return
+     * @return 控件的集合
      */
     public SparseArray<Object> getAllView() {
         if (null != this.mParameter) {
@@ -117,7 +119,7 @@ public class DiyDialog extends Dialog implements
      * @param y       Y轴
      * @param f       透明度
      * @param gravity 显示位置（上，下，左，右，居中）位置
-     * @return
+     * @return DiyDialog对象
      */
     public DiyDialog setDialogXYAndWH(int x, int y, float f, int gravity) {
         Window dialogWindow = setDialogLocation(gravity);
@@ -135,8 +137,8 @@ public class DiyDialog extends Dialog implements
      *
      * @param width   宽度
      * @param height  高度
-     * @param gravity 显示位置
-     * @return
+     * @param gravity 显示位置（上，下，左，右，居中）位置
+     * @return DiyDialog对象
      */
     public DiyDialog setDialogWH(int width, int height, int gravity) {
         Window dialogWindow = setDialogLocation(gravity);
@@ -150,8 +152,11 @@ public class DiyDialog extends Dialog implements
     /**
      * 设置dialog显示的（上，下，左，右，居中）位置
      *
-     * @param gravity
-     * @return
+     * @param gravity 显示位置（上，下，左，右，居中）位置
+     * @see Gravity
+     *
+     * @return 当前dialog的Window对象
+     *
      */
     public Window setDialogLocation(int gravity) {
         Window dialogWindow = getWindow();
@@ -162,7 +167,6 @@ public class DiyDialog extends Dialog implements
     /**
      * 清除dialog数据
      *
-     * @return
      */
     public void clear() {
         if (null != this.mParameter)

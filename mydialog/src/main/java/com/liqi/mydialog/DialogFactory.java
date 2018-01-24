@@ -22,7 +22,7 @@ public class DialogFactory {
 	 *            是否触摸关闭
 	 * @param mCancelable
 	 *            是否可以使用返回按键
-	 * @return
+	 * @return DiyDialog对象
 	 */
 	public static DiyDialog getDiyDialog(Context context, int theme,
 			int layoutId, boolean mCanceledTouch, boolean mCancelable) {
@@ -44,7 +44,7 @@ public class DialogFactory {
 	 *            是否触摸关闭
 	 * @param mCancelable
 	 *            是否可以使用返回按键
-	 * @return
+	 * @return DiyDialog对象
 	 */
 	public static DiyDialog getDiyDialog(Context context, int layoutId,
 			boolean mCanceledTouch, boolean mCancelable) {
